@@ -12,16 +12,18 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Title()
-            ForEach(0..<2) { item in
-                HStack {
-                    ForEach(0..<2) { item in
-                        Rectangle()
-                            .frame(width: 160, height: 160)
-                            .foregroundColor(.gray)
-                    }
-
+            CardTiles()
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("temperature")
+                        .font(.system(size: 29, weight: .medium, design: .default))
+                    Text("see the more tempee")
+                        .font(.system(size: 18, weight: .light, design: .default))
                 }
-            }
+                Spacer()
+            }.padding(.all, 20)
+
+            Spacer()
         }
     }
 }
@@ -47,5 +49,29 @@ struct Title: View {
                 .foregroundColor(.gray)
             
         }.padding(.all, 20)
+    }
+}
+
+struct CardTiles: View {
+    var body: some View {
+        VStack {
+            HStack {
+                Rectangle()
+                    .frame(width: 160, height: 160)
+                    .foregroundColor(.gray)
+                Rectangle()
+                    .frame(width: 160, height: 160)
+                    .foregroundColor(.gray)
+            }
+            HStack {
+                Rectangle()
+                    .frame(width: 160, height: 160)
+                    .foregroundColor(.gray)
+                Rectangle()
+                    .frame(width: 160, height: 160)
+                    .foregroundColor(.gray)
+                
+            }
+        }
     }
 }
